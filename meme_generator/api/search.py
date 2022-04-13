@@ -25,11 +25,11 @@ def search_images():
     """
     Return a list of urls of images based on users' queries.
 
-    query: the text used for searching images
+    q: the text used for searching images
     per_page: number of images earch page
     page: the index of the page
     """
-    query = flask.request.args.get('query', '')
+    query = flask.request.args.get('q', '')
     per_page = flask.request.args.get('per_page', 100)
     page = flask.request.args.get('page', 1)
 
