@@ -3,6 +3,7 @@ import requests
 import flask
 import meme_generator
 
+
 def request_images(query, per_page, page):
     """Get images by sending requests to Flickr API."""
     api_key = meme_generator.app.config['FLICKR_API_KEY']
@@ -18,7 +19,6 @@ def request_images(query, per_page, page):
     }
     res = requests.get(api_endpoint, params = args)
     return res.json()
-
 
 @meme_generator.app.route('/api/v1/search/', methods=['GET'])
 def search_images():
