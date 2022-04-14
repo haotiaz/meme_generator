@@ -9,9 +9,15 @@ class Edit extends React.Component {
     super(props);
     let search = window.location.search;
     let params = new URLSearchParams(search);
-    this.state = {url: params.get('url') || "", text: "", fontSize: "20" , color: "white"};
+    this.state = {url: params.get('url') || "",
+                  text: "", 
+                  fontSize: "20" , 
+                  color: "white", 
+                  position: "50"
+                };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
+    this.handlePositionChange = this.handlePositionChange.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickClear = this.handleClickClear.bind(this);
@@ -33,6 +39,21 @@ class Edit extends React.Component {
     }
   }
 
+  handlePositionChange(event) {
+    if(event.target.value==""){
+      this.setState({position: ""});
+    }
+    else if(parseFloat(event.target.value)<=100 && parseFloat(event.target.value)>=0) {
+      this.setState({position: event.target.value});
+    }
+    else if(parseFloat(event.target.value)>100){
+      this.setState({position: 100});
+    }
+    else{
+      this.setState({position: 0});
+    }
+  }
+
   handleColorChange(event) {
     this.setState({color: event.target.value});
   }
@@ -47,7 +68,7 @@ class Edit extends React.Component {
   }
 
   render() {
-    let { url, text, fontSize, color } = this.state;
+    let { url, text, fontSize, color, position } = this.state;
     let parsedSize = 0
     if(fontSize==""){
       parsedSize = 1;
@@ -55,7 +76,7 @@ class Edit extends React.Component {
     else{
       parsedSize = parseFloat(fontSize)/10;
     }
-    const textStyle = {fontSize: parsedSize.toString()+"em", color: color}
+    const textStyle = {fontSize: parsedSize.toString()+"em", color: color, top: position+"%"}
 
     return (
       <div>
@@ -68,6 +89,10 @@ class Edit extends React.Component {
           <label>
             Font size(max: 100):
             <input type="number" value={this.state.fontSize} onChange={this.handleSizeChange}></input>
+          </label>
+          <label>
+            Position(max: 100):
+            <input type="number" value={this.state.position} onChange={this.handlePositionChange}></input>
           </label>
           <label>
             Color:
