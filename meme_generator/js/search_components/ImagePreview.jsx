@@ -11,7 +11,7 @@ function ImagePreview(props) {
   // Image preview in the search result
   const { id, server, secret, title } = props;
   let previewImageUrl = buildImageUrl(server, id, secret, 'n');
-  let largeImageUrl = encodeURIComponent(buildImageUrl(server, id, secret, 'b'));
+  let largeImageUrl = encodeURIComponent(buildImageUrl(server, id, secret, 'c'));
 
   return (
     <Link
