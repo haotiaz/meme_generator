@@ -11,7 +11,7 @@ class Index extends React.Component {
   
     render() {
       return (
-        <div>
+        <div className="index-search">
           <h1 className="meme-text">Meme Generator</h1>
           <form action="/search/" method="get">
             <input type="text" name="q" required />
