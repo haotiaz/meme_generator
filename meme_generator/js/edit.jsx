@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MemePreview from './edit_components/MemePreview';
-import Navigation from './Navagation';
+import MemePreview from './edit_components/memePreview';
+import MemeEdit from './edit_components/memeEdit';
+import Navigation from './navagation';
 
 class Edit extends React.Component {
   /* Display the page that edits the image.
@@ -81,31 +82,15 @@ class Edit extends React.Component {
 
     return (
       <div>
-        <Navigation searchText={ "" } />
+        {/* <Navigation searchText={ "" } /> */}
         <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.text} onChange={this.handleTextChange} />
-          <label>
-            Font size(1-100):
-            <input type="number" value={this.state.fontSize} onChange={this.handleSizeChange}></input>
-          </label>
-          <label>
-            Position(0-100):
-            <input type="number" value={this.state.position} onChange={this.handlePositionChange}></input>
-          </label>
-          <label>
-            Color:
-            <select value={this.state.color} onChange={this.handleColorChange}>
-              <option value="white">White</option>
-              <option value="black">Black</option>
-              <option value="blue">Blue</option>
-              <option value="red">Red</option>
-              <option value="green">Green</option>
-              <option value="yellow">Yellow</option>
-            </select>
-          </label>
-          <button onClick={this.handleClickClear}>Clear</button>
-        </form>
+        <MemeEdit
+          text={text} handleTextChange={this.handleTextChange}
+          fontSize={fontSize} handleSizeChange={this.handleSizeChange}
+          position={position} handlePositionChange={this.handlePositionChange}
+          color={color} handleColorChange={this.handleColorChange}
+          handleSubmit={this.handleSubmit} handleClickClear={this.handleClickClear}
+        />
       </div>
     );
   }
