@@ -30,3 +30,8 @@
     -2px 0px 0 #000,
     2px 2px 5px #000;
 }
+
+.navbar {
+    position: sticky; 
+    top: 0
+}

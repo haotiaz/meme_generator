@@ -12,7 +12,7 @@ class Index extends React.Component {
     render() {
       return (
         <div>
-          <div>Meme Generator</div>
+          <h1 className="meme-text">Meme Generator</h1>
           <form action="/search/" method="get">
             <input type="text" name="q" required />
             <input type="submit" value="Search" />

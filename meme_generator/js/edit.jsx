@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MemePreview from './edit_components/MemePreview';
 
 class Edit extends React.Component {
   /* Display the page that edits the image.
@@ -76,14 +77,10 @@ class Edit extends React.Component {
     else{
       parsedSize = parseFloat(fontSize)/10;
     }
-    const textStyle = {fontSize: parsedSize.toString()+"em", color: color, top: position+"%"}
 
     return (
       <div>
-        <div className="container">
-          <img src={url} />
-          <div style={textStyle} className="centered meme-text">{text}</div>
-        </div>
+        <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.text} onChange={this.handleTextChange} />
           <label>

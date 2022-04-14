@@ -1,6 +1,7 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ImagePreview from './search_components/ImagePreview';
+import Navigation from './Navagation';
 
 class Search extends React.Component {
   /* Display the search results
@@ -58,13 +59,14 @@ class Search extends React.Component {
   }
 
   render() {
-    let { images, hasMore } = this.state;
+    let { query, images, hasMore } = this.state;
     let imageItems = images.map((image, index) => (
       <ImagePreview key={index} id={image.id} server={image.server} secret={image.secret} title={image.title}/>
     ));
 
     return (
       <div>
+        <Navigation searchText={ query } />
         <InfiniteScroll
           dataLength = { imageItems.length }
           next = { this.fetchData }
