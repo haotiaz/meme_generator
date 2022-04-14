@@ -19,7 +19,7 @@ class Navigation extends React.Component {
         //         <Navbar.Brand href="/" className="meme-text" >Meme Generator</Navbar.Brand>
         //     </Container>
         // </Navbar>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className="navbar">
   <Container>
     <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

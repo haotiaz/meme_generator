@@ -19,11 +19,12 @@ function MemePreview(props) {
   );
 }
 
-// MemePreview.propTypes = {
-//   text: PropTypes.string.isRequired,
-//   size: PropTypes.string.isRequired,
-//   color: PropTypes.string.isRequired,
-//   position: PropTypes.string.isRequired
-// };
+MemePreview.propTypes = {
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+};
 
 export default MemePreview;

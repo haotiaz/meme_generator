@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MemePreview from './edit_components/MemePreview';
+import Navigation from './Navagation';
 
 class Edit extends React.Component {
   /* Display the page that edits the image.
@@ -14,7 +15,7 @@ class Edit extends React.Component {
                   text: "", 
                   fontSize: "20" , 
                   color: "white", 
-                  position: "50"
+                  position: "20"
                 };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
@@ -80,15 +81,16 @@ class Edit extends React.Component {
 
     return (
       <div>
+        <Navigation searchText={ "" } />
         <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.text} onChange={this.handleTextChange} />
           <label>
-            Font size(max: 100):
+            Font size(1-100):
             <input type="number" value={this.state.fontSize} onChange={this.handleSizeChange}></input>
           </label>
           <label>
-            Position(max: 100):
+            Position(0-100):
             <input type="number" value={this.state.position} onChange={this.handlePositionChange}></input>
           </label>
           <label>
