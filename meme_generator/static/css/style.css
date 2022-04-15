@@ -5,6 +5,7 @@
     color: white;
     width: max-content;
     overflow: hidden;
+    margin-top: 50px;
   }
 
 /* Centered text */
@@ -12,6 +13,11 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.meme-image {
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Text style from https://codepen.io/MetalEscape/pen/WrYxVM */
@@ -49,9 +55,29 @@
     margin: 2px 1px;
 }
 
+/* Content of the page */
 .container {
     width: 80%;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
+}
+
+.container .left-column {
+    display: flex;
+    width: 70%;
+    float: left;
+    justify-content: center
+}
+
+.container .right-column {
+    display: flex;
+    width: 30%;
+    float: right;
+    text-align: left !important;
+}
+
+.meme-edit-panel {
+    margin-top: 50px;
+    margin-left:10px;
 }

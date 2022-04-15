@@ -12,6 +12,7 @@ def request_images(query, per_page, page):
         'method': 'flickr.photos.search',
         'api_key': api_key,
         'text': query,
+        'sort': 'relevance',
         'per_page': per_page,
         'page': page,
         'format': 'json',

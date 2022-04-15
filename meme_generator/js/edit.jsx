@@ -82,22 +82,24 @@ class Edit extends React.Component {
 
     return (
       <div>
-        {/* <Navigation searchText={ "" } /> */}
-        <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
-        <MemeEdit
-          text={text} handleTextChange={this.handleTextChange}
-          fontSize={fontSize} handleSizeChange={this.handleSizeChange}
-          position={position} handlePositionChange={this.handlePositionChange}
-          color={color} handleColorChange={this.handleColorChange}
-          handleSubmit={this.handleSubmit} handleClickClear={this.handleClickClear}
-        />
+        <Navigation searchText={ "" } />
+        <div className="container">
+          <span className="left-column">
+            <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
+          </span>
+          <span className="right-column">
+            <MemeEdit
+              text={text} handleTextChange={this.handleTextChange}
+              fontSize={fontSize} handleSizeChange={this.handleSizeChange}
+              position={position} handlePositionChange={this.handlePositionChange}
+              color={color} handleColorChange={this.handleColorChange}
+              handleSubmit={this.handleSubmit} handleClickClear={this.handleClickClear}
+            />
+          </span>
+        </div>
       </div>
     );
   }
 }
-
-Edit.propTypes = {
-  
-};
 
 export default Edit;

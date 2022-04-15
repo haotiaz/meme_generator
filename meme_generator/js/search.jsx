@@ -66,7 +66,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        {/* <Navigation searchText={ query } /> */}
+        <Navigation searchText={ query } />
         <div>
         <InfiniteScroll
           className="container"

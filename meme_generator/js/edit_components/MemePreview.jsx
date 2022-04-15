@@ -13,7 +13,7 @@ function MemePreview(props) {
 
   return (
     <div className="meme-container">
-        <img src={url} />
+        <img  className="meme-image" src={url} width="100%" />
         <div style={textStyle} className="centered meme-text">{text}</div>
     </div>
   );
