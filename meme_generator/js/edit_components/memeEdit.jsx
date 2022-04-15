@@ -52,12 +52,15 @@ function MemeEdit(props) {
   );
 }
 
-// MemePreview.propTypes = {
-//   url: PropTypes.string.isRequired,
-//   text: PropTypes.string.isRequired,
-//   size: PropTypes.string.isRequired,
-//   color: PropTypes.string.isRequired,
-//   position: PropTypes.string.isRequired,
-// };
+EditPreview.propTypes = {
+  text: PropTypes.string.isRequired,
+  handleTextChange: PropTypes.func.isRequired,
+  fontSize: PropTypes.string.isRequired,
+  handleSizeChange: PropTypes.func.isRequired,
+  position: PropTypes.string.isRequired,
+  handlePositionChange: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
+  handleColorChange: PropTypes.func.isRequired
+};
 
 export default MemeEdit;

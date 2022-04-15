@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav, NavDropdown, Navbar, Container } from 'react-bootstrap'
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Navigation extends React.Component {
     /* Index page that searchs for images
@@ -30,7 +29,7 @@ class Navigation extends React.Component {
               </form>
             </Navbar.Collapse>
             </Container>
-</Navbar>
+        </Navbar>
       );
     }
 }

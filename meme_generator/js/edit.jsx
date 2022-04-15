@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import MemePreview from './edit_components/memePreview';
 import MemeEdit from './edit_components/memeEdit';
 import Navigation from './navagation';
@@ -102,5 +101,7 @@ class Edit extends React.Component {
     );
   }
 }
+
+
 
 export default Edit;
