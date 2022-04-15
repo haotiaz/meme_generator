@@ -52,7 +52,7 @@ function MemeEdit(props) {
   );
 }
 
-EditPreview.propTypes = {
+MemeEdit.propTypes = {
   text: PropTypes.string.isRequired,
   handleTextChange: PropTypes.func.isRequired,
   fontSize: PropTypes.string.isRequired,
