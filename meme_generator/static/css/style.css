@@ -6,6 +6,7 @@
     width: max-content;
     overflow: hidden;
     margin-top: 50px;
+    margin-bottom: 50px;
   }
 
 /* Centered text */
@@ -37,9 +38,10 @@
     2px 2px 5px #000;
 }
 
-.navbar {
+.sticky-navbar {
     position: sticky; 
-    top: 0
+    width: 100%;
+    top: 0;
 }
 
 .index-search {
@@ -81,3 +83,12 @@
     margin-top: 50px;
     margin-left:10px;
 }
+
+/* Navbar brand text */
+.navbar-text {
+    color: white !important
+  }
+
+  .navbar-form {
+      margin-left:10px
+  }

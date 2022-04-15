@@ -61,12 +61,14 @@ class Search extends React.Component {
   render() {
     let { query, images, hasMore } = this.state;
     let imageItems = images.map((image, index) => (
-      <ImagePreview key={index} id={image.id} server={image.server} secret={image.secret} title={image.title}/>
+      <ImagePreview query={query} key={index} id={image.id} server={image.server} secret={image.secret} title={image.title}/>
     ));
 
     return (
       <div>
-        <Navigation searchText={ query } />
+        <div className="sticky-navbar">
+          <Navigation searchText={ query } />
+        </div>
         <div>
         <InfiniteScroll
           className="container"

@@ -9,7 +9,7 @@ function buildImageUrl(server, id, secret, size) {
 
 function ImagePreview(props) {
   // Image preview in the search result
-  const { id, server, secret, title } = props;
+  const { query, id, server, secret, title } = props;
   let previewImageUrl = buildImageUrl(server, id, secret, 'n');
   let largeImageUrl = encodeURIComponent(buildImageUrl(server, id, secret, 'b'));
 
@@ -18,7 +18,7 @@ function ImagePreview(props) {
       <Link
         to={{
         pathname: "/edit/",
-        search: `?url=${largeImageUrl}`
+        search: `?q=${query}&url=${largeImageUrl}`
         }}
       >
         <img  src={ previewImageUrl } alt={ title } height='200' />

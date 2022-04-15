@@ -13,6 +13,7 @@ class Edit extends React.Component {
     let search = window.location.search;
     let params = new URLSearchParams(search);
     this.state = {url: params.get('url') || "",
+                  query: params.get('q') || "",
                   text: "", 
                   fontSize: "20" , 
                   color: "white", 
@@ -71,7 +72,7 @@ class Edit extends React.Component {
   }
 
   render() {
-    let { url, text, fontSize, color, position } = this.state;
+    let { url, query, text, fontSize, color, position } = this.state;
     let parsedSize = 0
     if(fontSize==""){
       parsedSize = 1;
@@ -82,7 +83,7 @@ class Edit extends React.Component {
 
     return (
       <div>
-        <Navigation searchText={ "" } />
+        <Navigation searchText={ query } />
         <div className="container">
           <span className="left-column">
             <MemePreview url={url} text={text} size={parsedSize.toString()+"em"} color={color} position={position+"%"}/>
