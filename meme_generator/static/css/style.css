@@ -1,5 +1,5 @@
 /* Container holding the image and the text */
-.container {
+.meme-container {
     position: relative;
     text-align: center;
     color: white;
@@ -42,4 +42,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.image-preview {
+    display: inline-block;
+    margin: 2px 1px;
+}
+
+.container {
+    width: 80%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }

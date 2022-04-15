@@ -67,7 +67,9 @@ class Search extends React.Component {
     return (
       <div>
         {/* <Navigation searchText={ query } /> */}
+        <div>
         <InfiniteScroll
+          className="container"
           dataLength = { imageItems.length }
           next = { this.fetchData }
           hasMore = { hasMore }
@@ -80,6 +82,7 @@ class Search extends React.Component {
         >
           <div>{ imageItems }</div>
         </InfiniteScroll>
+        </div>
       </div>
     );
   }

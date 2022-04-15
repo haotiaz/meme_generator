@@ -14,14 +14,16 @@ function ImagePreview(props) {
   let largeImageUrl = encodeURIComponent(buildImageUrl(server, id, secret, 'c'));
 
   return (
-    <Link
-      to={{
-      pathname: "/edit/",
-      search: `?url=${largeImageUrl}`
-      }}
-    >
-      <img src={ previewImageUrl } alt={ title } height='200' />
-    </Link>
+    <span className="image-preview">
+      <Link
+        to={{
+        pathname: "/edit/",
+        search: `?url=${largeImageUrl}`
+        }}
+      >
+        <img  src={ previewImageUrl } alt={ title } height='200px' />
+      </Link>
+    </span>
   );
 }
 
