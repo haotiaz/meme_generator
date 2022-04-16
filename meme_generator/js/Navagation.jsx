@@ -2,8 +2,7 @@ import React from 'react';
 import { Nav, NavDropdown, Navbar, Container } from 'react-bootstrap'
 
 class Navigation extends React.Component {
-    /* Index page that searchs for images
-     */
+    /* Navagation bar that has a search bar */
   
     constructor(props) {
       super(props);

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 class Index extends React.Component {
-    /* Index page that searchs for images
+    /* Index page that searchs images
      */
   
     constructor(props) {
