@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# meme_generator
+#
+# Start server
+
+kill $(lsof -t -i:8000)
+export FLASK_ENV=development
+FLASK_ENV=development
+export FLASK_APP=meme_generator
+FLASK_APP=meme_generator
+flask run --host 0.0.0.0 --port 8000
